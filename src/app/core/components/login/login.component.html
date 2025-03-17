@@ -1,0 +1,43 @@
+<div>
+	<div class="login">
+		<!-- <div class="container"> -->
+			<div class="row m-0">
+				<div class="col-md-6 p-0">
+					<div class="Welcome">
+					   <div class="nityamit-img">
+						  <img src="image/nityamitlogo.png">
+					   </div>
+					  <div class="text-Service">
+						  <h2>Your
+						  <p>All Service</p>
+					      <span>In one field....</span></h2>
+					  </div>
+					</div>
+				</div>
+
+				<div class="col-md-6 Password">
+					<div class="Signin mb-5">
+						<h2>Admin Signin</h2>
+						<p>Welcome back login to your panel.</p>
+					</div>
+					<form class="mb-lg" [formGroup]="loginform" (ngSubmit)="login()">
+					<div class="from">
+						<div class="email">
+							<label>Your email</label>
+						    <input type="text" formControlName="userName" placeholder="">
+						</div>
+						<div class="email">
+							<label>Password</label>
+						    <input formControlName="password" type="password" placeholder="">
+						</div>
+						<div class="login-btn">
+							<button>
+								login
+							</button>
+						</div>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>

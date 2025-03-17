@@ -8,6 +8,11 @@ import {
   ROUTE_LOGIN,  
   ROUTE_SIGNUP
 } from './core/constants/routes';
+import { HeaderComponent } from './core/components/header/header.component';
+import { LoginComponent } from './core/components/login/login.component';
+import { ProductlistComponent } from './features/productlist/productlist.component';
+import { ProductsetupComponent } from './features/productsetup/productsetup.component';
+import { OrderlistComponent } from './features/orderlist/orderlist.component';
 const routes: Routes = [
   // {
   //   path: ROUTE_LOGIN,
@@ -23,13 +28,24 @@ const routes: Routes = [
   //       (m) => m.SignUpModule
   //     ),
   // },
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  {
-    path: ROUTE_DASHBOARD,
-    component: DashboardComponent,
-    pathMatch: 'full',
-    canActivate: [AuthGuard],
-  },
+  // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  // {
+  //   path: ROUTE_DASHBOARD,
+  //   component: DashboardComponent,
+  //   pathMatch: 'full',
+  //   canActivate: [AuthGuard],
+  // },
+  {path:'login', component:LoginComponent},
+  {path:'',component:HeaderComponent,
+    children: [
+      {path:'dashboard',component:DashboardComponent},
+      {path:'productlist',component:ProductlistComponent},
+      {path:'productsetup',component:ProductsetupComponent},
+      {path:'orderlist',component:OrderlistComponent},
+
+    
+    ]
+  }
 ];
 
 @NgModule({

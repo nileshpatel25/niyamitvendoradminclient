@@ -1,3 +1,6 @@
+
+<div  class="Dashboard">
+	<div class="row m-0">
 <div class="col-md-3 ps-0 sidebar">
     <div class="d-flex  align-items-center justify-content-between">
         <div class="all">
@@ -37,7 +40,7 @@
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                         <ul class="submenu">
                             <li>
-                                <a href="#">All</a>
+                                <a href="/orderlist">All</a>
                             </li>
                             <li>
                                 <a href="#">scheduled</a>
@@ -86,7 +89,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="section">
+            <!-- <div class="section">
                 <h4>Promotion Management</h4>
                 <ul>
                     <li>
@@ -138,7 +141,7 @@
                         </ul>
                     </li>
                 </ul>
-            </div>
+            </div> -->
             <div class="section">
                 <h4>Product management</h4>
                 <ul>
@@ -168,7 +171,7 @@
                         <a href="#">Units</a>
                     </li>
                     <li>
-                        <a href="#">Product Setup</a>
+                        <a href="/productlist">Product Setup</a>
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                         <ul class="submenu">
                             <li>
@@ -199,7 +202,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="section">
+            <!-- <div class="section">
                 <h4>Store management</h4>
                 <ul>
                     <li>
@@ -226,7 +229,7 @@
                         <a href="#">Bulk export</a>
                     </li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
@@ -258,8 +261,11 @@
             </li>
         </ul>
     </div>
+    
+<router-outlet></router-outlet>
 </div>
-
+</div>
+</div>
 <script>
     $(document).ready(function(){
           $(".section").click(function(){

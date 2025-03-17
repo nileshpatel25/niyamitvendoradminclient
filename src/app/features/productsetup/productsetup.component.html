@@ -1,0 +1,250 @@
+
+<form role="form"  [formGroup]="pform" (ngSubmit)="addproduct()">
+<div class="row m-0">  
+    <div class="new d-flex">
+          <div class="new-img">
+             <img src="image/items (1).png">
+          </div>
+          <div class="new-text">
+              <h4>Add new item</h4>
+          </div>
+       </div>
+    <div class="col-md-6">
+        <div class="card Arabic">
+            <div class="card-header">
+               <div class="Default">
+            <ul>
+                 <li>
+                   <a href="#">Default</a>
+                 </li>
+                  <li>
+                    <a href="#">English(EN)</a>
+                 </li>
+                  <!-- <li>
+                     <a href="#">Arabic - العربية(AR)</a>
+                  </li> -->
+              </ul>
+         </div>
+      </div>
+   <div class="card-body">  
+       <div class="from-1">
+           <label>Product Name (Default)</label>
+           <input class="form-control" type="text" formControlName="productName" placeholder="New item">
+                 
+       </div>
+       <div class="from-1">
+        <label>Product Code (Default)</label>
+        <input class="form-control" type="text" formControlName="code" placeholder="New item code">
+                  
+    </div>
+       <!-- <div class="from-1">
+           <label>Short description (Default) </label>
+           <textarea type="text" ></textarea>
+       </div> -->
+  </div>
+ </div>      
+    </div>
+    <div class="col-md-6 ">
+         <div class="card Arabic">
+             <!-- <div class="card-header">
+                 <div class="d-flex align-items-center">
+                      <div class="dashboard-img">
+                         <img src="image/dashboard.png">
+                     </div>
+                 <div class="Covers">
+                    <h4>Store Logo & Covers</h4>
+                 </div> 
+              </div> 
+           </div> -->
+  
+            <div class="card-header d-flex align-items-center">
+                <div class="Store-img">
+                    <img src="image/resturant.png">
+                </div>
+                <div class="Store-text">
+                     <h4>Product image ( Ratio 1:1 )</h4>
+                </div>
+           </div>
+           <div class="card-body">
+             <div class="add-Covers">
+                <div class="col-md-4 upload ">
+                     <!-- <h4>Product image ( Ratio 1:1 )</h4> -->
+                     <div class="upload-img">
+                       <img src="../../assets/images/upload-img.png">
+                       <input class="form-control" type="file" (change)="fileProgress($event)" accept="image/*">
+            
+                  </div>
+                 </div>
+                <!-- <div class="col-md-6 upload">
+                     <h4>Item thumbnail * ( Ratio 1:1 )</h4>
+                     <div class="upload-img">
+                        <img src="../../assets/images/upload-img.png">
+                  </div>
+                 </div> -->
+              </div>
+            </div>
+           </div>
+ 
+    </div>
+ </div>
+<div class="information">
+<div class="card">
+    <div class="card-header d-flex align-items-center">
+         <div class="Store-img">
+             <img src="image/resturant.png">
+         </div>
+         <div class="Store-text">
+              <h4>Category Info</h4>
+         </div>
+    </div>
+    <div class="card-body">
+          <div class="row">
+               
+                <div class="col-md-3 form-0">
+                      <label>Category *</label>
+                      <select class="form-control"  formControlName="guid_CategoryId"  (change)="getsubcategorylist($event)">
+                        <option value="">Select Category</option>
+                          <option *ngFor="let b of categorylst; let i=index;" value="{{b.guidCategoryId}}"> {{b.categoryName}} </option>
+                      </select>
+                        
+                </div>
+                <div class="col-md-3 form-0">
+                      <label>Sub category</label>
+                      <select class="form-control"  formControlName="guid_SubCategoryId">
+                        <option value="">Select Sub Category</option>
+                          <option *ngFor="let b of subcategorylist; let i=index;" value="{{b.guidCategoryId}}"> {{b.categoryName}} </option>
+                      </select>
+                </div>
+                <div class="col-md-3 form-0">
+                    <label>Brand</label>
+                    <select class="form-control"  formControlName="guid_BrandId">
+                        <option value="">Select Brand</option>
+                          <option *ngFor="let b of brandlist; let i=index;" value="{{b.guidBrandId}}"> {{b.brandName}} </option>
+                      </select>
+              </div>
+                <div class="col-md-3 form-0">
+                      <label>Unit</label>
+                      <select class="form-control"  formControlName="guid_UnitId">
+                        <option value="">Select Unit</option>
+                          <option *ngFor="let b of unitlist; let i=index;" value="{{b.unitGuid}}"> {{b.unitName}} </option>
+                      </select>
+                </div>
+          </div>
+          <div class="row">
+                 <div class="col-md-6">
+                     <div class="form-0">
+                            <label>Unit Factor Name </label>
+                            <select class="form-control"  formControlName="guid_UnitFactorId">
+                                <option value="">Select Unit Factor Name</option>
+                                  <option *ngFor="let b of allunitfactornamelist; let i=index;" value="{{b.guidUnitFactorId}}"> {{b.unitFactorName}} </option>
+                              </select>
+                    </div>
+                 </div>
+                
+          </div>
+        
+    </div>
+</div>
+</div>  			   
+
+ <div class="card">
+       <div class="card-header">
+            <h4><i class="fa-solid fa-user"></i>Price Information</h4>
+       </div>
+       <div class="card-body">
+             <div class="row">
+                   <div class="col-md-3 form-0">
+                      <label>Price *</label>
+                      <input class="form-control" type="number"  formControlName="price" placeholder="Enter price">
+               
+                   </div>
+                   <div class="col-md-3 form-0">
+                    <div class="form-0">
+                           <label>Available Stock</label>
+                           <input class="form-control" type="number"  formControlName="available_Stock" placeholder="Ex.100">
+          
+                   </div>
+                </div>
+                   <div class="col-md-3 form-0">
+                      <label>Discount type * </label>
+                      <select class="form-control"  formControlName="discountType">
+                        <option value="">Select Discount Type</option>
+                          <option  value="Percent"> Percent</option>
+                          <option  value="Amount"> Amount</option>
+                      </select>
+                   </div>
+                    <div class="col-md-3 form-0">
+                      <label>Discount (%) *</label>
+                      <input class="form-control" type="number"  formControlName="discount" placeholder="Enter discount">
+             
+                   </div>
+                   <div class="col-md-3 form-0">
+                    <label>Maximum Purchase Quantity Limit</label>
+                            <input class="form-control" type="number"  formControlName="maxPurchaseQty" placeholder="Ex.10">
+           
+                 </div>
+             </div>
+       </div>
+ </div>
+ <div class="card">
+       <div class="card-header">
+            <h4><i class="fa-solid fa-user"></i>Attribute</h4>
+       </div>
+       <div class="card-body">
+             <div class="row">
+                   <div class="col-md-3 form-0">
+                    <label>
+                        <input type="checkbox" checked="" formControlName="is_Organic">
+                       Is organic</label>
+                   </div>
+                   <div class="col-md-3 form-0">
+                    <label>
+                        <input type="checkbox" checked="" formControlName="is_InSale">
+                        Is InSale</label>
+                   </div>
+             </div>
+       </div>
+ </div>
+ <div class="card">
+       <div class="card-header">
+            <h4><i class="fa-solid fa-user"></i>Tags</h4>
+       </div>
+       <div class="card-body">
+             <div class="row">
+                   <div class="col-md-12 form-0">
+                    <input class="form-control" type="text" formControlName="tag" placeholder="Search Tag">
+              
+                   </div>
+             </div>
+       </div>
+ </div>
+ <div class="card">
+    <div class="card-header">
+         <h4><i class="fa-solid fa-user"></i>discription</h4>
+    </div>
+    <div class="card-body">
+          <div class="row">
+                <div class="col-md-6 form-0">
+                    <label>Short discription</label>
+                    <angular-editor  [config]="config" formControlName="short_Description"></angular-editor>
+                
+           
+                </div>
+                <div class="col-md-6 form-0">
+                    <label>Full discription</label>
+               <angular-editor  [config]="config"  formControlName="full_Description"></angular-editor>
+            
+           
+                </div>
+          </div>
+    </div>
+</div>
+ <div class="sub-btn">
+     <div class="reset">
+         <a href="#">reset</a>
+     </div>
+     <div class="submit">
+         <a href="#">submit</a>
+     </div>
+ </div>
+</form>
