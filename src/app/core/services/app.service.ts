@@ -7,11 +7,12 @@ export class AppService {
 
   constructor(  private router:Router,) { }
   login(resp:any){
+    
     localStorage.setItem('token',resp.accessToken);
-    localStorage.setItem('userid',resp.userid);
+    localStorage.setItem('userid',resp.vendorDatas[0].guidVendorId);
     localStorage.setItem('expires_in',resp.expiration);
     // localStorage.setItem('username',resp.userName);
-    // localStorage.setItem('role',resp.Role);
+    localStorage.setItem('role',resp.role);
     // localStorage.setItem('Name',resp.Name);
   //  localStorage.setItem('key','loaded');
     // if(resp.Role=="Admin")

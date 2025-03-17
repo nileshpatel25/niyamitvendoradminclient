@@ -221,7 +221,7 @@ this.allunitfactornamelist=resp.unitfactornamedatas;
 
           this.uploadImage(resp.guid);
           this.toast.success(resp.message);
-          this.router.navigate(['/product/productlist']);
+          this.router.navigate(['/productlist']);
       this.pform.reset();
       this.formSubmitted=false;
         
