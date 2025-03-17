@@ -1,1 +1,188 @@
-<p>orderlist works!</p>
+<div class="category">
+    <div class="new d-flex align-items-center">
+      <div class="new-img">
+          <img src="image/items (1).png">
+      </div>
+     <div class="new-text">
+          <h4>Order list </h4>
+     </div>
+     <!-- <div class="Item-5">
+        <h4>56</h4>
+     </div> -->
+   </div>
+  
+ <!-- <div class="English mb-3">
+     <div class="Default">
+        <ul>
+         <li>
+           <a href="#">Default</a>
+         </li>
+         <li>
+           <a href="#">English(EN)</a>
+         </li>
+         <li>
+            <a href="#">Arabic - العربية(AR)</a>
+         </li>
+       </ul>
+      </div>
+     <div class="row ">  
+       <div class="col-md-6">
+               <div class="from-1">
+                 <label>Name (Default)</label>
+                 <input type="text" name="" value="" class="" placeholder="New category">
+               </div>
+       </div>
+       <div class="col-md-6">
+        <div class="upload-img">
+           <img src="image/upload-img.png">
+        </div>
+        <div class="upload-btn  p-4">
+           <div class="reset-btn">
+              <a href="#">Reset</a>
+           </div>
+           <div class="add-btn">
+              <a href="#">Add</a>
+           </div>
+        </div>
+       </div>
+     </div>
+</div> -->
+<div class="card ">
+ <!--  <div class="card-header d-flex align-items-center">
+       <div class="Store-img">
+           <img src="image/resturant.png">
+        </div>
+         <div class="Store-text">
+              <h4>Store & Category Info</h4>
+        </div>
+   </div> -->
+         <div class="card-body p-4">
+             <div class="row">
+                 <div class="Store-text">
+                    <h3>Search data</h3>
+                 </div>
+                <div class="col-md-3 form-0">
+                   <input type="text" name=""  placeholder="All stores" value="">
+                </div>
+                <div class="col-md-3 form-0">
+                   <input type="text" name=""  placeholder="All Zones" value="">
+                </div>
+                <div class="col-md-3 form-0">
+                   <input type="text" name=""  placeholder="All category" value="">
+                </div>
+                <div class="col-md-3 form-0">
+                   <input type="text" name=""  placeholder="All sub category" value="">
+                </div>
+           </div>
+     </div>
+ </div>
+</div> 
+ <div class="English">
+    <div class="Category-list">
+    
+     <!-- <div class="Category-Search">
+        <div class="email-1">
+                <input type="emali" name="" value="" placeholder="Search categories">
+             </div>
+             <div class="go">
+                 <button><i class="fa-solid fa-magnifying-glass"></i></button>
+              </div>
+     </div>
+     <div class="Category-btn">
+        <button>
+           <a href="/productsetup">Add</a>
+        </button>
+     </div> -->
+    </div>
+    <div class="list-table">
+     <table class="table table-borderless" style="padding: 5px;">
+             <tr class="table-light">
+                  <th>#</th>                 
+                  <th>Order No</th>
+                  <th>Name</th>
+                  <th>Phone</th>
+                  <th>Price</th>
+                  <th>Date</th>
+                  <!-- <th>Quantity</th> -->
+                  <th>Status</th>                  
+                  <th>Action</th>
+              </tr>
+               <tr *ngFor="let c of orderlist ; let i=index;" >
+                  <td> {{i+1}}</td>
+                  <td>{{c.orderNo}}</td>
+                  <td>{{c.name}}</td>
+                  <td>
+                    {{c.phoneNo}}
+                 </td>
+                 <td>{{c.total}}</td>
+                 <td>{{c.date_Created}}</td>
+                 <td *ngIf="c.status === 'Pending'">
+                    <button class="btn btn-square btn-info" type="button" (click)="updateStatus(c.guid_OrderId)">
+                        {{ c.status }}
+                    </button>
+                </td>
+                 <td *ngIf="c.status === 'Confirm'">
+                    <button class="btn btn-square btn-info" type="button" (click)="updateStatus(c.guid_OrderId)">
+                        {{ c.status }}
+                    </button>
+                </td>
+                <td *ngIf="c.status === 'Processing'">
+                    <button class="btn btn-square btn-pink" type="button" (click)="updateStatus(c.guid_OrderId)">
+                        {{ c.status }}
+                    </button>
+                </td>
+                <td *ngIf="c.status === 'Shipped'">
+                    <button class="btn btn-square btn-purple" type="button" (click)="updateStatus(c.guid_OrderId)">
+                        {{ c.status }}
+                    </button>
+                </td>  
+                <td *ngIf="c.status === 'Delivered'">
+                    <button class="btn btn-square btn-success" type="button" (click)="updateStatus(c.guid_OrderId)">
+                        {{ c.status }}
+                    </button>
+                </td>
+
+                <td *ngIf="c.status === 'Pickup'">
+                    <button class="btn btn-square btn-primary" type="button" (click)="updateStatus(c.guid_OrderId)">
+                        {{ c.status }}
+                    </button>
+                </td>
+                <td *ngIf="c.status === 'Return' ">
+                    <button class="btn btn-square btn-green" type="button" disabled>
+                        {{ c.status }}
+                    </button>
+                </td>
+                <td *ngIf="c.status === 'Cancel'">
+                    <button class="btn btn-square btn-danger" type="button" disabled>
+                        {{ c.status }}
+                    </button>
+                </td>
+                
+                  <!-- <td>
+                      <div class="form-check form-switch">
+                         <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes" checked>
+                         <label class="form-check-label" for="mySwitch"></label>
+                       </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-switch">
+                         <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes" checked>
+                         <label class="form-check-label" for="mySwitch"></label>
+                       </div>
+                  </td> -->
+               
+                  <td>
+                    <div class="btn-flex">
+                       <div class="icon-btn">
+                          <a href="#"><i class="fa-solid fa-pen"></i></a>
+                       </div>
+                       <div class="icon-btn-1">
+                          <a href="#"><i class="fa-solid fa-trash"></i></a>
+                       </div>
+                     </div>
+                  </td>
+               </tr>
+           
+            </table>
+    </div>
+  </div>
