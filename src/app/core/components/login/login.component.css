@@ -58,7 +58,7 @@ img{
 }
 
 .Welcome{
-    background-image: url(../../../assets/images/auth-bg.png);
+    background-image: url(../../../../assets/images/auth-bg.png);
     width: 100%;
     height:100vh;
     background-size: cover;
