@@ -73,18 +73,25 @@
     </div>
     <div class="list-table">
      <table class="table table-borderless">
-             <tr class="table-light" style="padding: 10px; background-color: #f9fafc;">
+      <thead class="thead-light">
+
+     
+             <tr class="table-light" role="row">
                   <th>#</th>                 
-                  <th>Order No</th>
-                  <th>Name</th>
-                  <th>Phone</th>
-                  <th>Price</th>
-                  <th>Date</th>
+                  <th class="table-column-pl-0 border-0 sorting">Order No</th>
+                  <th class="table-column-pl-0 border-0 sorting">Name</th>
+                  <th class="table-column-pl-0 border-0 sorting">Phone</th>
+                  <th class="table-column-pl-0 border-0 sorting">Price</th>
+                  <th class="table-column-pl-0 border-0 sorting">Date</th>
                   <!-- <th>Quantity</th> -->
-                  <th>Status</th>                  
+                  <th class="table-column-pl-0 border-0 sorting">Status</th>                  
                   <!-- <th>Action</th> -->
               </tr>
-               <tr *ngFor="let c of orderlist ; let i=index;" >
+            </thead>
+            <tbody>
+
+           
+               <tr *ngFor="let c of orderlist ; let i=index;"  class="status-delivered class-all odd" role="row">
                   <td> {{i+1}}</td>
                   <td>{{c.orderNo}}</td>
                   <td>{{c.name}}</td>
@@ -159,7 +166,7 @@
                      </div>
                   </td> -->
                </tr>
-           
+              </tbody>
             </table>
     </div>
   </div>

@@ -25,10 +25,22 @@
 						<div class="email">
 							<label>Your email</label>
 						    <input type="text" formControlName="userName" placeholder="">
+							<p>
+								<span class="text-danger"  *ngIf="!loginform.get('userName')?.value && formSubmitted">
+								  Enter your email or phonenumber
+								</span>
+							   
+								<!-- <span class="text-danger"  *ngIf="loginform.get('userName')?.errors?.email">Email must be a valid email address</span> -->
+							  </p>
 						</div>
 						<div class="email">
 							<label>Password</label>
 						    <input formControlName="password" type="password" placeholder="">
+							<p>
+								<span class="text-danger"  *ngIf="!loginform.get('password')?.value && formSubmitted">
+								  Enter your password
+								</span>
+							  </p>
 						</div>
 						<div class="login-btn">
 							<button>

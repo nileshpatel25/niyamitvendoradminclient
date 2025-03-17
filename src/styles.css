@@ -223,7 +223,7 @@ img{
     width: 100%;
     padding:10px;
     border-radius: 6px;
-    background-color: #005555;
+    /* background-color: #005555; */
     border:1px solid white;
 }
 .menu-ber{

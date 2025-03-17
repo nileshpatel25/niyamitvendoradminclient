@@ -16,48 +16,61 @@
 .status-pending {
     background-color: #FFC107;
     color: #fff;
+    border: 1px solid rgba(0, 201, 167, 0.6);
 }
 
 .status-processing {
     background-color: #007BFF;
     color: #fff;
+    border: 1px solid rgba(0, 201, 167, 0.6);
+
 }
 
 .status-shipped {
     background-color: #6F42C1;
     color: #fff;
+    border: 1px solid rgba(0, 201, 167, 0.6);
 }
 
 .status-delivered {
-    background-color: #28A745;
-    color: #fff;
+    /* background-color: #28A745;
+    color: #fff; */
+    color: #00c9a7;
+    background-color: rgba(0, 201, 167, 0.1);
+    border: 1px solid rgba(0, 201, 167, 0.6);
 }
 
 .status-cancelled {
     background-color: #DC3545;
     color: #fff;
+    border: 1px solid rgba(0, 201, 167, 0.6);
 }
 
 .status-onhold {
     background-color: #FD7E14;
     color: #fff;
+    border: 1px solid rgba(0, 201, 167, 0.6);
 }
 
 .status-refunded {
     background-color: #6C757D;
     color: #fff;
+    border: 1px solid rgba(0, 201, 167, 0.6);
 }
 /* New Statuses */
 .status-confirmed {
     background-color: #17A2B8; /* Teal */
     color: #fff;
+    border: 1px solid rgba(0, 201, 167, 0.6);
 }
 
 .status-returned {
     background-color: #FF5733; /* Reddish Orange */
     color: #fff;
+    border: 1px solid rgba(0, 201, 167, 0.6);
 }/* New Pickup Status */
 .status-pickup {
     background-color: #8E44AD; /* Purple */
     color: #fff;
+    border: 1px solid rgba(0, 201, 167, 0.6);
 }

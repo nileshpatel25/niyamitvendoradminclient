@@ -7,7 +7,7 @@
           <h4>Product list </h4>
      </div>
      <div class="Item-5">
-        <h4>56</h4>
+        <!-- <h4>56</h4> -->
      </div>
    </div>
   
@@ -47,15 +47,8 @@
        </div>
      </div>
 </div> -->
-<div class="card ">
- <!--  <div class="card-header d-flex align-items-center">
-       <div class="Store-img">
-           <img src="image/resturant.png">
-        </div>
-         <div class="Store-text">
-              <h4>Store & Category Info</h4>
-        </div>
-   </div> -->
+<!-- <div class="card ">
+
          <div class="card-body p-4">
              <div class="row">
                  <div class="Store-text">
@@ -75,15 +68,15 @@
                 </div>
            </div>
      </div>
- </div>
+ </div> -->
 </div> 
  <div class="English">
     <div class="Category-list">
      <div class="list">
-        <h5>
+        <!-- <h5>
            Product list
                   <span>15</span>
-        </h5>
+        </h5> -->
      </div>
      <div class="Category-Search">
         <div class="email-1">
@@ -101,18 +94,22 @@
     </div>
     <div class="list-table">
      <table class="table table-borderless" style="padding: 5px;">
-             <tr class="table-light">
-                  <th>SI</th>                 
-                  <th>Name</th>
-                  <th>Unit</th>
-                  <th>Category</th>
-                  <th>Price</th>
-                  <th>Discount</th>
-                  <th>Quantity</th>
+      <thead class="thead-light">
+
+         <tr class="table-light" role="row">
+                  <th class="table-column-pl-0 border-0 sorting">SI</th>                 
+                  <th class="table-column-pl-0 border-0 sorting">Name</th>
+                  <th class="table-column-pl-0 border-0 sorting">Unit</th>
+                  <th class="table-column-pl-0 border-0 sorting">Category</th>
+                  <th class="table-column-pl-0 border-0 sorting">Price</th>
+                  <th class="table-column-pl-0 border-0 sorting">Discount</th>
+                  <th class="table-column-pl-0 border-0 sorting"> Quantity</th>
                   <!-- <th>Status</th>                   -->
-                  <th>Action</th>
+                  <th class="table-column-pl-0 border-0 sorting">Action</th>
               </tr>
-               <tr *ngFor="let c of productlist ; let i=index;" >
+      </thead>
+      <tbody>
+               <tr *ngFor="let c of productlist ; let i=index;"   class="status-delivered class-all odd" role="row">
                   <td> {{i+1}}</td>
                   <td>{{c.productName}}</td>
                   <td>{{c.unitName}}</td>
@@ -147,7 +144,7 @@
                      </div>
                   </td>
                </tr>
-           
+      </tbody>
             </table>
     </div>
   </div>
