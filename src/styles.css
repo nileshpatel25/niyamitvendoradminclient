@@ -13,14 +13,16 @@ img{
 .sidebar{
     position: fixed;
     top:0;
+    width: 20%;
 }
 .chevron{
     border: #fff;
     padding: 0 10px;
 }
 .Users{
-    margin-left: 24.2%;
+    margin-left: 20%;
     margin-top:8%;
+    width: 80%;
 }
 .heder{
     position: fixed;
@@ -238,7 +240,7 @@ img{
     display: none;
 }
 .sidebar.collapse_sidebar+.Management.col-md-9{
-    width: 90%;
+    width: 100%;
 }
 .collapse_sidebar .from {
     display: none;
@@ -549,6 +551,7 @@ img{
 .table-light{
     position: sticky;
     top: 0%;
+    color: #677788;
 }
 .section ul li span {
     float: right;

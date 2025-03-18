@@ -93,11 +93,11 @@
      </div>
     </div>
     <div class="list-table">
-     <table class="table table-borderless" style="padding: 5px;">
+     <table class="table table-borderless">
       <thead class="thead-light">
 
          <tr class="table-light" role="row">
-                  <th class="table-column-pl-0 border-0 sorting">SI</th>                 
+                  <th class="table-column-pl-0 border-0 sorting">#</th>                 
                   <th class="table-column-pl-0 border-0 sorting">Name</th>
                   <th class="table-column-pl-0 border-0 sorting">Unit</th>
                   <th class="table-column-pl-0 border-0 sorting">Category</th>
@@ -109,9 +109,9 @@
               </tr>
       </thead>
       <tbody>
-               <tr *ngFor="let c of productlist ; let i=index;"   class="status-delivered class-all odd" role="row">
+               <tr *ngFor="let c of productlist ; let i=index;"   class="odd" role="row">
                   <td> {{i+1}}</td>
-                  <td>{{c.productName}}</td>
+                  <td> <img src='{{c.thumbnailImageUrl}}' style="width: 50px; height: 50px;">  {{c.productName}}</td>
                   <td>{{c.unitName}}</td>
                   <td>
                     {{c.category}}
@@ -136,7 +136,8 @@
                   <td>
                     <div class="btn-flex">
                        <div class="icon-btn">
-                          <a href="#"><i class="fa-solid fa-pen"></i></a>
+                          <a [routerLink]="['/productsetup']"
+                          [queryParams]="{ guid: c.guidProductId }"><i class="fa-solid fa-pen"></i></a>
                        </div>
                        <div class="icon-btn-1">
                           <a href="#"><i class="fa-solid fa-trash"></i></a>
