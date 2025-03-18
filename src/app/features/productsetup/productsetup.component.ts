@@ -98,7 +98,7 @@ export class ProductsetupComponent {
   }
 
   getproductdata(guid:any){
-    this.apiservice.postapi('Product/GetProductbyId?Guid_Productid='+guid).subscribe(resp=>{
+    this.apiservice.getapi('Product/GetProductbyId?Guid_Productid='+guid).subscribe(resp=>{
       if(resp.status){
         this.getsubcategory(resp.productDatas[0].guidCategoryId);
         this.pform.patchValue({
@@ -238,7 +238,7 @@ this.allunitfactornamelist=resp.unitfactornamedatas;
         if(resp.status){
           this.uploadImage(resp.guid);
           this.toast.success(resp.message);
-          this.router.navigate(['/product/productlist']);
+          this.router.navigate(['/productlist']);
       this.pform.reset();
       this.formSubmitted=false;
           
