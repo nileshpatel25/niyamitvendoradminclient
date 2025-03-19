@@ -3,7 +3,7 @@
 <div class="row m-0">  
     <div class="new d-flex">
           <div class="new-img">
-             <img src="image/items (1).png">
+             <img src="../../../assets/images/Items.png">
           </div>
           <div class="new-text">
               <h4>Add new item</h4>
@@ -30,17 +30,29 @@
        <div class="from-1">
            <label>Product Name (Default)</label>
            <input class="form-control" type="text" formControlName="productName" placeholder="New item">
-                 
+           <p>
+            <span class="text-danger" *ngIf="!pform.get('productName')?.value && formSubmitted">
+               item name required.
+            </span>
+          </p>    
        </div>
        <div class="from-1">
         <label>Product Code (Default)</label>
         <input class="form-control" type="text" formControlName="code" placeholder="New item code">
-                  
+        <p>
+            <span class="text-danger" *ngIf="!pform.get('code')?.value && formSubmitted">
+                code required.
+            </span>
+          </p>        
     </div>
     <div class="from-1">
         <label>Order No</label>
         <input class="form-control" type="text" formControlName="orderno" placeholder="New item code">
-                  
+        <p>
+            <span class="text-danger" *ngIf="!pform.get('orderno')?.value && formSubmitted">
+                orderno required.
+            </span>
+          </p>         
     </div>
        <!-- <div class="from-1">
            <label>Short description (Default) </label>
@@ -96,7 +108,7 @@
 <div class="card">
     <div class="card-header d-flex align-items-center">
          <div class="Store-img">
-             <img src="image/resturant.png">
+             <img src="../../../assets/images/category.png">
          </div>
          <div class="Store-text">
               <h4>Category Info</h4>
@@ -111,7 +123,11 @@
                         <option value="">Select Category</option>
                           <option *ngFor="let b of categorylst; let i=index;" value="{{b.guidCategoryId}}"> {{b.categoryName}} </option>
                       </select>
-                        
+                      <p>
+                        <span class="text-danger" *ngIf="!pform.get('guid_CategoryId')?.value && formSubmitted">
+                            category required.
+                        </span>
+                      </p>   
                 </div>
                 <div class="col-md-3 form-0">
                       <label>Sub category</label>
@@ -119,6 +135,11 @@
                         <option value="">Select Sub Category</option>
                           <option *ngFor="let b of subcategorylist; let i=index;" value="{{b.guidCategoryId}}"> {{b.categoryName}} </option>
                       </select>
+                      <p>
+                        <span class="text-danger" *ngIf="!pform.get('guid_SubCategoryId')?.value && formSubmitted">
+                           sub category required.
+                        </span>
+                      </p>   
                 </div>
                 <div class="col-md-3 form-0">
                     <label>Brand</label>
@@ -126,6 +147,11 @@
                         <option value="">Select Brand</option>
                           <option *ngFor="let b of brandlist; let i=index;" value="{{b.guidBrandId}}"> {{b.brandName}} </option>
                       </select>
+                      <p>
+                        <span class="text-danger" *ngIf="!pform.get('guid_BrandId')?.value && formSubmitted">
+                           brand required.
+                        </span>
+                      </p>  
               </div>
                 <div class="col-md-3 form-0">
                       <label>Unit</label>
@@ -133,6 +159,11 @@
                         <option value="">Select Unit</option>
                           <option *ngFor="let b of unitlist; let i=index;" value="{{b.unitGuid}}"> {{b.unitName}} </option>
                       </select>
+                      <p>
+                        <span class="text-danger" *ngIf="!pform.get('guid_UnitId')?.value && formSubmitted">
+                           unit required.
+                        </span>
+                      </p>  
                 </div>
           </div>
           <div class="row">
@@ -143,6 +174,11 @@
                                 <option value="">Select Unit Factor Name</option>
                                   <option *ngFor="let b of allunitfactornamelist; let i=index;" value="{{b.guidUnitFactorId}}"> {{b.unitFactorName}} </option>
                               </select>
+                              <p>
+                                <span class="text-danger" *ngIf="!pform.get('guid_UnitFactorId')?.value && formSubmitted">
+                                   unit factor required.
+                                </span>
+                              </p>  
                     </div>
                  </div>
                 
@@ -161,13 +197,21 @@
                    <div class="col-md-3 form-0">
                       <label>Price *</label>
                       <input class="form-control" type="number"  formControlName="price" placeholder="Enter price">
-               
+                      <p>
+                        <span class="text-danger" *ngIf="!pform.get('price')?.value && formSubmitted">
+                            price required.
+                        </span>
+                      </p>  
                    </div>
                    <div class="col-md-3 form-0">
                     <div class="form-0">
                            <label>Available Stock</label>
                            <input class="form-control" type="number"  formControlName="available_Stock" placeholder="Ex.100">
-          
+                           <p>
+                            <span class="text-danger" *ngIf="!pform.get('available_Stock')?.value && formSubmitted">
+                                available Stock required.
+                            </span>
+                          </p>  
                    </div>
                 </div>
                    <div class="col-md-3 form-0">
@@ -177,16 +221,29 @@
                           <option  value="Percent"> Percent</option>
                           <option  value="Amount"> Amount</option>
                       </select>
+                      <p>
+                        <span class="text-danger" *ngIf="!pform.get('discountType')?.value && formSubmitted">
+                            discountType required.
+                        </span>
+                      </p>  
                    </div>
                     <div class="col-md-3 form-0">
                       <label>Discount (%) *</label>
                       <input class="form-control" type="number"  formControlName="discount" placeholder="Enter discount">
-             
+                      <p>
+                        <span class="text-danger" *ngIf="!pform.get('discount')?.value && formSubmitted">
+                            discount required.
+                        </span>
+                      </p>  
                    </div>
                    <div class="col-md-3 form-0">
                     <label>Maximum Purchase Quantity Limit</label>
                             <input class="form-control" type="number"  formControlName="maxPurchaseQty" placeholder="Ex.10">
-           
+                            <p>
+                                <span class="text-danger" *ngIf="!pform.get('maxPurchaseQty')?.value && formSubmitted">
+                                    maxPurchaseQty required.
+                                </span>
+                              </p>  
                  </div>
              </div>
        </div>
@@ -218,7 +275,11 @@
              <div class="row">
                    <div class="col-md-12 form-0">
                     <input class="form-control" type="text" formControlName="tag" placeholder="Search Tag">
-              
+                    <p>
+                        <span class="text-danger" *ngIf="!pform.get('tag')?.value && formSubmitted">
+                            tag required.
+                        </span>
+                      </p>  
                    </div>
              </div>
        </div>
@@ -232,23 +293,32 @@
                 <div class="col-md-6 form-0">
                     <label>Short discription</label>
                     <angular-editor  [config]="config" formControlName="short_Description"></angular-editor>
-                
+                    <p>
+                        <span class="text-danger" *ngIf="!pform.get('short_Description')?.value && formSubmitted">
+                            short Description required.
+                        </span>
+                      </p>  
            
                 </div>
                 <div class="col-md-6 form-0">
                     <label>Full discription</label>
                <angular-editor  [config]="config"  formControlName="full_Description"></angular-editor>
-            
+               <p>
+                <span class="text-danger" *ngIf="!pform.get('full_Description')?.value && formSubmitted">
+                    full Description required.
+                </span>
+              </p>  
            
                 </div>
           </div>
     </div>
 </div>
  <div class="sub-btn">
-     <div class="reset">
-        <button>reset</button>
+     <div class="Category-btn">
+        <a routerLink="/productlist" class="btn btn-danger m-r-10 m-t-10" type="button">
+           Back</a>
      </div>
-     <div class="submit">
+     <div class="Category-btn">
         <button >submit</button>
      </div>
  </div>

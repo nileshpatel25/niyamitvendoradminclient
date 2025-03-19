@@ -38,9 +38,9 @@ export class ProductlistComponent {
     
           });
   }
-
+ 
   getproductlist(){
-    this.apiservice.getapi('Product/GetAllProductadmin?Guid_VendorId='+localStorage['userid']+'&pageNo=1&pageSize=10').subscribe(resp=>{
+    this.apiservice.getapi('Product/GetAllProduct?Guid_VendorId='+localStorage['userid']+'&pageNo=1&pageSize=10').subscribe(resp=>{
       if(resp.status){
           this.productlist=resp.productDatas;
           this.filteredProductList = resp.productDatas
